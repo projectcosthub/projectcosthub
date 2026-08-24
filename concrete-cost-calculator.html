@@ -439,7 +439,17 @@ Estimated Project Cost
 <div class="total" id="total">
 $0 - $0
 </div>
+<div class="breakdown">
 
+<strong>
+Location:
+</strong>
+
+<span id="locationResult">
+Not selected
+</span>
+
+</div>
 
 <div class="breakdown">
 
@@ -791,11 +801,16 @@ materialLow + laborLowTotal;
 const totalHigh =
 materialHigh + laborHighTotal;
 
-
+const stateName =
+document.getElementById("state").options[
+    document.getElementById("state").selectedIndex
+].text;
 document.getElementById("total").textContent =
 "$" +
 Math.round(totalLow).toLocaleString() +
 " - $" +
+    document.getElementById("locationResult").textContent =
+stateName;
 Math.round(totalHigh).toLocaleString();
 
 
