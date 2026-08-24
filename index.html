@@ -53,8 +53,8 @@
         }
 
         .hero {
-            max-width: 1100px;
-            margin: 70px auto;
+            max-width: 900px;
+            margin: 70px auto 50px;
             padding: 0 25px;
             text-align: center;
         }
@@ -69,8 +69,6 @@
         .hero p {
             font-size: 20px;
             color: #6b7280;
-            max-width: 700px;
-            margin: auto;
         }
 
         .section {
@@ -85,6 +83,85 @@
             color: #111827;
         }
 
+        .calculator {
+            max-width: 700px;
+            margin: 30px auto;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+        }
+
+        .calculator h2 {
+            margin-bottom: 10px;
+        }
+
+        .calculator-intro {
+            color: #6b7280;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .calculate-button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .calculate-button:hover {
+            background: #1d4ed8;
+        }
+
+        .result {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background: #eff6ff;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .result h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .result-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        .result p {
+            color: #4b5563;
+        }
+
         .cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -96,12 +173,6 @@
             border: 1px solid #e5e7eb;
             border-radius: 12px;
             padding: 25px;
-            transition: 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
         }
 
         .card h3 {
@@ -113,15 +184,19 @@
             color: #6b7280;
         }
 
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 18px;
-            background: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
+        .guide {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .guide p {
+            margin-bottom: 18px;
+            color: #4b5563;
+        }
+
+        .guide h3 {
+            margin: 25px 0 10px;
+            color: #111827;
         }
 
         footer {
@@ -161,112 +236,202 @@
         </div>
 
         <nav>
-            <a href="#calculators">Calculators</a>
-            <a href="#guides">Cost Guides</a>
+            <a href="#calculator">Calculator</a>
+            <a href="#guides">Guides</a>
         </nav>
     </div>
 </header>
+
 
 <section class="hero">
 
     <h1>Plan Your Next Home Project With Confidence</h1>
 
     <p>
-        Free calculators, cost estimates and practical guides
+        Free calculators and practical cost guides
         to help you plan your next home improvement project.
     </p>
 
 </section>
 
-<section class="section" id="calculators">
 
-    <h2>Popular Calculators</h2>
+<section class="section" id="calculator">
+
+    <div class="calculator">
+
+        <h2>Concrete Calculator</h2>
+
+        <p class="calculator-intro">
+            Calculate how much concrete you need for your project.
+        </p>
+
+
+        <div class="form-group">
+
+            <label for="length">
+                Length (feet)
+            </label>
+
+            <input
+                type="number"
+                id="length"
+                placeholder="Example: 20"
+                min="0"
+                step="any"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="width">
+                Width (feet)
+            </label>
+
+            <input
+                type="number"
+                id="width"
+                placeholder="Example: 10"
+                min="0"
+                step="any"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="depth">
+                Depth (inches)
+            </label>
+
+            <input
+                type="number"
+                id="depth"
+                placeholder="Example: 4"
+                min="0"
+                step="any"
+            >
+
+        </div>
+
+
+        <button
+            class="calculate-button"
+            onclick="calculateConcrete()"
+        >
+            Calculate Concrete
+        </button>
+
+
+        <div class="result" id="result">
+
+            <h3>Concrete Needed</h3>
+
+            <div class="result-number" id="resultNumber">
+                0
+            </div>
+
+            <p id="wasteResult">
+                Recommended amount including 10% waste.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="guide">
+
+        <h2>How Does the Concrete Calculator Work?</h2>
+
+        <p>
+            Our concrete calculator estimates the amount of concrete
+            needed based on the length, width and depth of your project.
+        </p>
+
+        <h3>Step 1: Measure your project</h3>
+
+        <p>
+            Measure the length and width in feet and the depth
+            in inches.
+        </p>
+
+        <h3>Step 2: Calculate the volume</h3>
+
+        <p>
+            The calculator converts your measurements into cubic yards,
+            which is the common unit used when ordering ready-mix concrete.
+        </p>
+
+        <h3>Step 3: Add a waste allowance</h3>
+
+        <p>
+            We add 10% to the calculated amount to provide a small
+            allowance for waste and measurement differences.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="guides">
+
+    <h2>More Home Improvement Tools</h2>
 
     <div class="cards">
 
         <div class="card">
-            <h3>🧱 Concrete Calculator</h3>
 
-            <p>
-                Calculate how much concrete you need
-                for your project.
-            </p>
-
-            <a href="#" class="button">
-                Coming Soon
-            </a>
-        </div>
-
-        <div class="card">
             <h3>🏠 Roofing Calculator</h3>
 
             <p>
-                Estimate the amount of roofing material
-                your project may require.
+                Estimate roofing material requirements
+                for your next project.
             </p>
 
-            <a href="#" class="button">
-                Coming Soon
-            </a>
         </div>
 
+
         <div class="card">
+
             <h3>🎨 Paint Calculator</h3>
 
             <p>
                 Estimate how much paint you may need
-                for your home project.
+                for your project.
             </p>
 
-            <a href="#" class="button">
-                Coming Soon
-            </a>
+        </div>
+
+
+        <div class="card">
+
+            <h3>🧱 Concrete Cost Calculator</h3>
+
+            <p>
+                Estimate the potential cost of a concrete
+                project.
+            </p>
+
         </div>
 
     </div>
 
 </section>
 
-<section class="section" id="guides">
-
-    <h2>Home Improvement Cost Guides</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Concrete Project Costs</h3>
-
-            <p>
-                Learn how concrete project costs are calculated
-                and what factors affect the final price.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Roof Replacement Costs</h3>
-
-            <p>
-                Understand the main factors that influence
-                the cost of replacing a roof.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>House Painting Costs</h3>
-
-            <p>
-                Learn how to estimate paint, materials
-                and labor for your project.
-            </p>
-        </div>
-
-    </div>
-
-</section>
 
 <footer>
 
-    <p><strong>Project Cost Hub</strong></p>
+    <p>
+        <strong>Project Cost Hub</strong>
+    </p>
 
     <p>
         Free tools and guides for planning home improvement projects.
@@ -277,6 +442,90 @@
     </p>
 
 </footer>
+
+
+<script>
+
+function calculateConcrete() {
+
+    const length = parseFloat(
+        document.getElementById("length").value
+    );
+
+    const width = parseFloat(
+        document.getElementById("width").value
+    );
+
+    const depth = parseFloat(
+        document.getElementById("depth").value
+    );
+
+
+    if (
+        isNaN(length) ||
+        isNaN(width) ||
+        isNaN(depth) ||
+        length <= 0 ||
+        width <= 0 ||
+        depth <= 0
+    ) {
+
+        alert("Please enter valid measurements.");
+
+        return;
+    }
+
+
+    /*
+        Convert depth from inches to feet.
+    */
+
+    const depthInFeet = depth / 12;
+
+
+    /*
+        Calculate cubic feet.
+    */
+
+    const cubicFeet =
+        length *
+        width *
+        depthInFeet;
+
+
+    /*
+        Convert cubic feet to cubic yards.
+
+        1 cubic yard = 27 cubic feet.
+    */
+
+    const cubicYards =
+        cubicFeet / 27;
+
+
+    /*
+        Add 10% waste.
+    */
+
+    const recommendedAmount =
+        cubicYards * 1.10;
+
+
+    document.getElementById("resultNumber").textContent =
+        cubicYards.toFixed(2) + " cubic yards";
+
+
+    document.getElementById("wasteResult").textContent =
+        "Recommended amount with 10% waste: " +
+        recommendedAmount.toFixed(2) +
+        " cubic yards.";
+
+
+    document.getElementById("result").style.display =
+        "block";
+}
+
+</script>
 
 </body>
 </html>
