@@ -161,11 +161,6 @@ button:hover {
     margin-top: 10px;
 }
 
-.breakdown strong {
-    display: inline-block;
-    margin-right: 5px;
-}
-
 .info {
     background: #ffffff;
     border: 1px solid #e5e7eb;
@@ -242,6 +237,12 @@ Project<span>Cost</span>Hub
 <nav>
 
 <a href="index.html">
+Home
+</a>
+
+&nbsp; | &nbsp;
+
+<a href="concrete-cost-calculator.html">
 Concrete Calculator
 </a>
 
@@ -805,26 +806,20 @@ projects.
 
 function calculateCost() {
 
-
 const projectType =
 document.getElementById("projectType").value;
-
 
 const state =
 document.getElementById("state").value;
 
-
 const length =
 parseFloat(document.getElementById("length").value);
-
 
 const width =
 parseFloat(document.getElementById("width").value);
 
-
 const depth =
 parseFloat(document.getElementById("depth").value);
-
 
 const finish =
 document.getElementById("finish").value;
@@ -846,34 +841,21 @@ return;
 }
 
 
-/* Project area */
-
 const area =
 length * width;
 
-
-/* Convert depth from inches to feet */
 
 const depthFeet =
 depth / 12;
 
 
-/* Calculate cubic feet */
-
 const cubicFeet =
 area * depthFeet;
 
 
-/* Convert cubic feet to cubic yards */
-
 const cubicYards =
 cubicFeet / 27;
 
-
-/*
-Planning installation ranges per square foot.
-These are prototype estimates and are not contractor quotes.
-*/
 
 let laborLow;
 let laborHigh;
@@ -908,8 +890,6 @@ laborHigh = 18;
 }
 
 
-/* Finish adjustment */
-
 if (finish === "standard") {
 
 laborLow *= 1.10;
@@ -926,70 +906,52 @@ laborHigh *= 1.80;
 }
 
 
-/*
-Planning concrete material price ranges
-per cubic yard.
-
-These values are estimates for the prototype
-and should not be treated as contractor quotes.
-*/
-
 const materialPrices = {
-
 
 texas: {
 low: 110,
 high: 140
 },
 
-
 california: {
 low: 140,
 high: 180
 },
-
 
 florida: {
 low: 120,
 high: 150
 },
 
-
 "north-carolina": {
 low: 120,
 high: 140
 },
-
 
 "new-york": {
 low: 150,
 high: 180
 },
 
-
 georgia: {
 low: 120,
 high: 140
 },
-
 
 arizona: {
 low: 130,
 high: 170
 },
 
-
 illinois: {
 low: 130,
 high: 160
 },
 
-
 ohio: {
 low: 110,
 high: 140
 },
-
 
 indiana: {
 low: 120,
@@ -1011,8 +973,6 @@ const materialHigh =
 cubicYards * selectedMaterial.high;
 
 
-/* Installation estimate */
-
 const laborLowTotal =
 area * laborLow;
 
@@ -1020,8 +980,6 @@ area * laborLow;
 const laborHighTotal =
 area * laborHigh;
 
-
-/* Total estimate */
 
 const totalLow =
 materialLow + laborLowTotal;
@@ -1031,15 +989,11 @@ const totalHigh =
 materialHigh + laborHighTotal;
 
 
-/* State display name */
-
 const stateName =
 document.getElementById("state").options[
 document.getElementById("state").selectedIndex
 ].text;
 
-
-/* Display total */
 
 document.getElementById("total").textContent =
 "$" +
@@ -1048,13 +1002,9 @@ Math.round(totalLow).toLocaleString() +
 Math.round(totalHigh).toLocaleString();
 
 
-/* Display location */
-
 document.getElementById("locationResult").textContent =
 stateName;
 
-
-/* Display material */
 
 document.getElementById("material").textContent =
 "$" +
@@ -1063,8 +1013,6 @@ Math.round(materialLow).toLocaleString() +
 Math.round(materialHigh).toLocaleString();
 
 
-/* Display installation */
-
 document.getElementById("labor").textContent =
 "$" +
 Math.round(laborLowTotal).toLocaleString() +
@@ -1072,21 +1020,15 @@ Math.round(laborLowTotal).toLocaleString() +
 Math.round(laborHighTotal).toLocaleString();
 
 
-/* Display area */
-
 document.getElementById("area").textContent =
 area.toFixed(0) +
 " sq ft";
 
 
-/* Display volume */
-
 document.getElementById("volume").textContent =
 cubicYards.toFixed(2) +
 " cubic yards";
 
-
-/* Show results */
 
 document.getElementById("result").style.display =
 "block";
