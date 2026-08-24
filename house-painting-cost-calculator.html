@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>House Painting Cost Calculator | Project Cost Hub</title>
+
+<meta name="description" content="Use our free house painting cost calculator to estimate potential interior or exterior painting costs based on project size, paint type, location and project complexity.">
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f8fa;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 18px 20px;
+}
+
+.nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+nav a {
+    color: #374151;
+    text-decoration: none;
+    margin-left: 14px;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+.hero {
+    max-width: 850px;
+    margin: 55px auto 35px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 44px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 19px;
+    color: #6b7280;
+}
+
+.section {
+    max-width: 1000px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.calculator {
+    max-width: 700px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.calculator h2 {
+    margin-top: 0;
+}
+
+.intro {
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #ffffff;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.result {
+    display: none;
+    margin-top: 25px;
+    background: #eff6ff;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.result h3 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.total {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    color: #2563eb;
+    margin: 15px 0 20px;
+}
+
+.breakdown {
+    background: #ffffff;
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.info {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.info h2 {
+    margin-top: 0;
+}
+
+.info h3 {
+    margin-top: 28px;
+}
+
+.info p {
+    color: #4b5563;
+}
+
+.notice {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    padding: 18px;
+    border-radius: 8px;
+    margin-top: 25px;
+}
+
+footer {
+    margin-top: 70px;
+    background: #111827;
+    color: #d1d5db;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .calculator {
+        padding: 22px;
+    }
+
+    .total {
+        font-size: 28px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+Project<span>Cost</span>Hub
+</div>
+
+<nav>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="concrete-cost-calculator.html">
+Concrete Calculator
+</a>
+
+<a href="roofing-cost-calculator.html">
+Roofing Calculator
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>
+House Painting Cost Calculator
+</h1>
+
+<p>
+Estimate the potential cost of a house painting project
+based on paint area, project type, location and paint quality.
+</p>
+
+</section>
+
+
+<section class="section">
+
+<div class="calculator">
+
+<h2>
+Estimate Your House Painting Cost
+</h2>
+
+<p class="intro">
+Enter your project details below to receive a general
+estimated cost range.
+</p>
+
+
+<div class="form-group">
+
+<label for="projectType">
+Project Type
+</label>
+
+<select id="projectType">
+
+<option value="interior">
+Interior Painting
+</option>
+
+<option value="exterior">
+Exterior Painting
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="area">
+Paint Area (sq ft)
+</label>
+
+<input
+type="number"
+id="area"
+placeholder="Example: 2000"
+min="1"
+step="any"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="state">
+Location / State
+</label>
+
+<select id="state">
+
+<option value="texas">
+Texas
+</option>
+
+<option value="california">
+California
+</option>
+
+<option value="florida">
+Florida
+</option>
+
+<option value="north-carolina">
+North Carolina
+</option>
+
+<option value="new-york">
+New York
+</option>
+
+<option value="georgia">
+Georgia
+</option>
+
+<option value="arizona">
+Arizona
+</option>
+
+<option value="illinois">
+Illinois
+</option>
+
+<option value="ohio">
+Ohio
+</option>
+
+<option value="indiana">
+Indiana
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="quality">
+Paint Quality
+</label>
+
+<select id="quality">
+
+<option value="basic">
+Basic
+</option>
+
+<option value="standard" selected>
+Standard
+</option>
+
+<option value="premium">
+Premium
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="condition">
+Surface Condition
+</label>
+
+<select id="condition">
+
+<option value="good">
+Good
+</option>
+
+<option value="average" selected>
+Average
+</option>
+
+<option value="poor">
+Poor
+</option>
+
+</select>
+
+</div>
+
+
+<button onclick="calculatePaintingCost()">
+Calculate Estimated Cost
+</button>
+
+
+<div class="result" id="result">
+
+<h3>
+Estimated Painting Project Cost
+</h3>
+
+<div class="total" id="total">
+$0 - $0
+</div>
+
+
+<div class="breakdown">
+
+<strong>
+Location:
+</strong>
+
+<span id="locationResult">
+Not selected
+</span>
+
+</div>
+
+
+<div class="breakdown">
+
+<strong>
+Project type:
+</strong>
+
+<span id="typeResult">
+Not selected
+</span>
+
+</div>
+
+
+<div class="breakdown">
+
+<strong>
+Paint area:
+</strong>
+
+<span id="areaResult">
+0 sq ft
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="info">
+
+<h2>
+How Our House Painting Cost Calculator Works
+</h2>
+
+<p>
+This calculator provides a general planning estimate based
+on paint area, project type, location, paint quality and
+surface condition.
+</p>
+
+
+<h3>
+Paint Area
+</h3>
+
+<p>
+The total paint area is one of the most important factors
+when estimating a painting project. Larger areas generally
+require more paint and labor.
+</p>
+
+
+<h3>
+Interior vs Exterior
+</h3>
+
+<p>
+Interior and exterior painting projects can have different
+labor requirements, preparation work and material costs.
+</p>
+
+
+<h3>
+Paint Quality
+</h3>
+
+<p>
+Different paint products can have different prices and
+coverage characteristics. Premium products may increase
+material costs.
+</p>
+
+
+<h3>
+Surface Condition
+</h3>
+
+<p>
+Walls and surfaces requiring repairs, scraping, sanding or
+additional preparation can increase labor requirements.
+</p>
+
+
+<h3>
+Location
+</h3>
+
+<p>
+Material and labor costs can vary between states and local
+markets.
+</p>
+
+
+<div class="notice">
+
+<strong>
+Important:
+</strong>
+
+<p>
+This calculator provides a general estimate and is not a
+contractor quote. Actual costs can vary depending on surface
+condition, labor rates, materials, preparation, accessibility
+and project specifications.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="info">
+
+<h2>
+How Much Does House Painting Cost?
+</h2>
+
+<p>
+The cost of painting a house depends on the total paint area,
+whether the project is interior or exterior, surface condition,
+paint quality, labor rates and location.
+</p>
+
+<p>
+Additional preparation, repairs, trim work, multiple coats and
+difficult access can increase the final project cost.
+</p>
+
+
+<h2>
+What Affects House Painting Cost?
+</h2>
+
+
+<h3>
+Project Size
+</h3>
+
+<p>
+Larger painting projects generally require more materials and
+labor.
+</p>
+
+
+<h3>
+Interior or Exterior
+</h3>
+
+<p>
+Exterior painting can involve additional preparation,
+weather-related considerations and access requirements.
+</p>
+
+
+<h3>
+Surface Preparation
+</h3>
+
+<p>
+Cleaning, sanding, scraping, patching and repairing damaged
+surfaces can increase the overall cost.
+</p>
+
+
+<h3>
+Paint Quality
+</h3>
+
+<p>
+Higher-quality paints can have higher material costs but may
+offer different coverage and durability characteristics.
+</p>
+
+
+<h3>
+Number of Coats
+</h3>
+
+<p>
+Some projects may require multiple coats to achieve the
+desired appearance and coverage.
+</p>
+
+
+<h3>
+Location
+</h3>
+
+<p>
+Local labor rates, material prices and market conditions can
+affect painting project costs.
+</p>
+
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+
+<h3>
+How much does it cost to paint a house?
+</h3>
+
+<p>
+The cost depends on the paint area, project type, surface
+condition, paint quality, labor and location. Use the
+calculator above for a general planning estimate.
+</p>
+
+
+<h3>
+Is interior or exterior painting more expensive?
+</h3>
+
+<p>
+Either type can vary significantly in cost depending on the
+size, preparation requirements, materials and accessibility
+of the project.
+</p>
+
+
+<h3>
+Does surface preparation increase painting costs?
+</h3>
+
+<p>
+Yes. Repairs, sanding, scraping, cleaning and other
+preparation work can increase labor requirements.
+</p>
+
+
+<h3>
+Does location affect painting prices?
+</h3>
+
+<p>
+Yes. Labor and material costs can vary between states and
+local markets.
+</p>
+
+
+<h3>
+Are painting calculator estimates exact?
+</h3>
+
+<p>
+No. The calculator provides a general planning estimate rather
+than a contractor quote. Actual costs should be confirmed with
+local painting professionals.
+</p>
+
+
+<div class="notice">
+
+<strong>
+Planning Tip:
+</strong>
+
+<p>
+Before starting a painting project, compare several local
+contractor quotes and confirm the exact preparation work,
+number of coats, materials and surfaces included.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>
+<strong>
+Project Cost Hub
+</strong>
+</p>
+
+<p>
+Free calculators and guides for planning home improvement
+projects.
+</p>
+
+<p>
+© 2026 Project Cost Hub
+</p>
+
+</footer>
+
+
+<script>
+
+function calculatePaintingCost() {
+
+const projectType =
+document.getElementById("projectType").value;
+
+const area =
+parseFloat(document.getElementById("area").value);
+
+const state =
+document.getElementById("state").value;
+
+const quality =
+document.getElementById("quality").value;
+
+const condition =
+document.getElementById("condition").value;
+
+
+if (
+isNaN(area) ||
+area <= 0
+) {
+
+alert("Please enter a valid paint area.");
+
+return;
+
+}
+
+
+let low;
+let high;
+
+
+if (projectType === "interior") {
+
+low = 2.00;
+high = 5.00;
+
+} else {
+
+low = 2.50;
+high = 6.00;
+
+}
+
+
+const stateMultipliers = {
+
+texas: 1.00,
+
+california: 1.25,
+
+florida: 1.05,
+
+"north-carolina": 0.95,
+
+"new-york": 1.25,
+
+georgia: 0.95,
+
+arizona: 1.05,
+
+illinois: 1.05,
+
+ohio: 0.95,
+
+indiana: 0.90
+
+};
+
+
+const stateMultiplier =
+stateMultipliers[state];
+
+
+low *= stateMultiplier;
+high *= stateMultiplier;
+
+
+if (quality === "standard") {
+
+low *= 1.10;
+high *= 1.15;
+
+}
+
+
+if (quality === "premium") {
+
+low *= 1.30;
+high *= 1.50;
+
+}
+
+
+if (condition === "average") {
+
+low *= 1.10;
+high *= 1.15;
+
+}
+
+
+if (condition === "poor") {
+
+low *= 1.30;
+high *= 1.50;
+
+}
+
+
+const totalLow =
+area * low;
+
+const totalHigh =
+area * high;
+
+
+const stateName =
+document.getElementById("state").options[
+document.getElementById("state").selectedIndex
+].text;
+
+
+const typeName =
+document.getElementById("projectType").options[
+document.getElementById("projectType").selectedIndex
+].text;
+
+
+document.getElementById("total").textContent =
+"$" +
+Math.round(totalLow).toLocaleString() +
+" - $" +
+Math.round(totalHigh).toLocaleString();
+
+
+document.getElementById("locationResult").textContent =
+stateName;
+
+
+document.getElementById("typeResult").textContent =
+typeName;
+
+
+document.getElementById("areaResult").textContent =
+Math.round(area).toLocaleString() +
+" sq ft";
+
+
+document.getElementById("result").style.display =
+"block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
