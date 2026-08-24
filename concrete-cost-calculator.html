@@ -4,11 +4,12 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Concrete Cost Calculator - Estimate Concrete Costs | Project Cost Hub</title>
 
-<meta name="description" content="Use our free concrete cost calculator to estimate patio, driveway, slab and walkway costs based on size, thickness, location and finish.">
+<meta name="description" content="Estimate potential concrete project costs based on project size, type, thickness, finish and location.">
 
 <style>
 
@@ -53,6 +54,10 @@ nav a {
     margin-left: 14px;
 }
 
+nav a:hover {
+    color: #2563eb;
+}
+
 .hero {
     max-width: 850px;
     margin: 55px auto 35px;
@@ -71,115 +76,135 @@ nav a {
     color: #6b7280;
 }
 
-.section {
-    max-width: 1000px;
+.calculator-section {
+    max-width: 900px;
     margin: 45px auto;
     padding: 0 20px;
 }
 
-.calculator {
-    max-width: 700px;
-    margin: auto;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 14px;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-}
-
-.calculator h2 {
-    margin-top: 0;
-    margin-bottom: 8px;
-}
-
-.intro {
-    color: #6b7280;
-    margin-bottom: 25px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-input,
-select {
-    width: 100%;
-    padding: 13px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    font-size: 16px;
-    background: #ffffff;
-}
-
-button {
-    width: 100%;
-    padding: 15px;
-    border: 0;
-    border-radius: 8px;
-    background: #2563eb;
-    color: #ffffff;
-    font-size: 17px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #1d4ed8;
-}
-
-.result {
-    display: none;
-    margin-top: 25px;
-    background: #eff6ff;
-    padding: 25px;
-    border-radius: 10px;
-}
-
-.result h3 {
-    text-align: center;
-    margin-top: 0;
-}
-
-.total {
-    text-align: center;
-    font-size: 34px;
-    font-weight: 700;
-    color: #2563eb;
-    margin: 15px 0 20px;
-}
-
-.breakdown {
-    background: #ffffff;
-    padding: 14px 16px;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-.info {
+.calculator-card {
     background: #ffffff;
     border: 1px solid #e5e7eb;
     border-radius: 12px;
     padding: 30px;
 }
 
-.info h2 {
+.calculator-card h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 16px;
+    background: #ffffff;
+}
+
+.calculate-button {
+    display: inline-block;
+    padding: 14px 22px;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.calculate-button:hover {
+    background: #1d4ed8;
+}
+
+.result {
+    margin-top: 30px;
+    padding: 24px;
+    background: #eff6ff;
+    border-radius: 10px;
+}
+
+.result h3 {
+    margin-top: 0;
+}
+
+.result-value {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 10px 0 20px;
+}
+
+.result p {
+    margin: 8px 0;
+}
+
+.info-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.info-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.info-card h2 {
     margin-top: 0;
     margin-bottom: 18px;
 }
 
-.info h3 {
+.info-card h3 {
     margin-top: 28px;
     margin-bottom: 8px;
 }
 
-.info p {
+.info-card p {
     color: #4b5563;
+}
+
+.guides {
+    background: #f9fafb;
+    border-radius: 10px;
+    padding: 22px;
+    margin-top: 30px;
+}
+
+.guides h3 {
+    margin-top: 0;
+}
+
+.guides ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+
+.guides li {
+    margin-bottom: 8px;
+}
+
+.guides a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.guides a:hover {
+    text-decoration: underline;
 }
 
 .notice {
@@ -209,16 +234,17 @@ footer p {
         gap: 10px;
     }
 
+    nav a {
+        margin-left: 8px;
+    }
+
     .hero h1 {
         font-size: 34px;
     }
 
-    .calculator {
+    .calculator-card,
+    .info-card {
         padding: 22px;
-    }
-
-    .total {
-        font-size: 28px;
     }
 
 }
@@ -249,6 +275,14 @@ Home
 Concrete Calculator
 </a>
 
+<a href="roofing-cost-calculator.html">
+Roofing Calculator
+</a>
+
+<a href="house-painting-cost-calculator.html">
+Painting Calculator
+</a>
+
 </nav>
 
 </div>
@@ -264,21 +298,21 @@ Concrete Cost Calculator
 
 <p>
 Estimate the potential cost of a concrete project based on
-project size, type, finish and location.
+project size, type, thickness, finish and location.
 </p>
 
 </section>
 
 
-<section class="section">
+<section class="calculator-section">
 
-<div class="calculator">
+<div class="calculator-card">
 
 <h2>
 Estimate Your Concrete Project Cost
 </h2>
 
-<p class="intro">
+<p>
 Enter your project details below to receive a general
 estimated cost range.
 </p>
@@ -315,50 +349,26 @@ Concrete Walkway
 
 <div class="form-group">
 
-<label for="state">
+<label for="location">
 Location / State
 </label>
 
-<select id="state">
+<select id="location">
 
-<option value="texas">
-Texas
+<option value="">
+Select State
 </option>
 
-<option value="california">
-California
+<option value="low">
+Lower Cost Market
 </option>
 
-<option value="florida">
-Florida
+<option value="average">
+Average Cost Market
 </option>
 
-<option value="north-carolina">
-North Carolina
-</option>
-
-<option value="new-york">
-New York
-</option>
-
-<option value="georgia">
-Georgia
-</option>
-
-<option value="arizona">
-Arizona
-</option>
-
-<option value="illinois">
-Illinois
-</option>
-
-<option value="ohio">
-Ohio
-</option>
-
-<option value="indiana">
-Indiana
+<option value="high">
+Higher Cost Market
 </option>
 
 </select>
@@ -376,8 +386,8 @@ Length (feet)
 type="number"
 id="length"
 placeholder="Example: 20"
-min="0"
-step="any"
+min="1"
+step="0.1"
 >
 
 </div>
@@ -393,8 +403,8 @@ Width (feet)
 type="number"
 id="width"
 placeholder="Example: 10"
-min="0"
-step="any"
+min="1"
+step="0.1"
 >
 
 </div>
@@ -409,9 +419,10 @@ Depth (inches)
 <input
 type="number"
 id="depth"
-value="4"
+placeholder="Example: 4"
 min="1"
-step="any"
+step="0.1"
+value="4"
 >
 
 </div>
@@ -429,7 +440,7 @@ Finish Level
 Basic
 </option>
 
-<option value="standard" selected>
+<option value="standard">
 Standard
 </option>
 
@@ -442,24 +453,28 @@ Decorative
 </div>
 
 
-<button onclick="calculateCost()">
+<button
+class="calculate-button"
+onclick="calculateCost()"
+>
 Calculate Estimated Cost
 </button>
 
 
-<div class="result" id="result">
+<div class="result">
 
 <h3>
 Estimated Project Cost
 </h3>
 
-<div class="total" id="total">
+<div
+class="result-value"
+id="totalCost"
+>
 $0 - $0
 </div>
 
-
-<div class="breakdown">
-
+<p>
 <strong>
 Estimated cost per sq ft:
 </strong>
@@ -467,12 +482,9 @@ Estimated cost per sq ft:
 <span id="costPerSqFt">
 $0 - $0
 </span>
+</p>
 
-</div>
-
-
-<div class="breakdown">
-
+<p>
 <strong>
 Location:
 </strong>
@@ -480,60 +492,47 @@ Location:
 <span id="locationResult">
 Not selected
 </span>
+</p>
 
-</div>
-
-
-<div class="breakdown">
-
+<p>
 <strong>
 Estimated concrete material:
 </strong>
 
-<span id="material">
+<span id="materialCost">
 $0 - $0
 </span>
+</p>
 
-</div>
-
-
-<div class="breakdown">
-
+<p>
 <strong>
 Estimated installation:
 </strong>
 
-<span id="labor">
+<span id="installationCost">
 $0 - $0
 </span>
+</p>
 
-</div>
-
-
-<div class="breakdown">
-
+<p>
 <strong>
 Project area:
 </strong>
 
-<span id="area">
+<span id="projectArea">
 0 sq ft
 </span>
+</p>
 
-</div>
-
-
-<div class="breakdown">
-
+<p>
 <strong>
 Concrete volume:
 </strong>
 
-<span id="volume">
+<span id="concreteVolume">
 0 cubic yards
 </span>
-
-</div>
+</p>
 
 </div>
 
@@ -542,9 +541,9 @@ Concrete volume:
 </section>
 
 
-<section class="section">
+<section class="info-section">
 
-<div class="info">
+<div class="info-card">
 
 <h2>
 How Our Concrete Cost Calculator Works
@@ -597,29 +596,42 @@ rates.
 </p>
 
 
-<div class="notice">
+<div class="guides">
 
-<strong>
-Important:
-</strong>
+<h3>
+Explore Our Concrete Cost Guides
+</h3>
 
-<p>
-This calculator provides a general estimate and is not a
-contractor quote. Actual costs can vary based on local
-material prices, labor rates, site preparation, accessibility,
-delivery, project specifications and other factors.
-</p>
+<ul>
+
+<li>
+<a href="concrete-patio-cost.html">
+Concrete Patio Cost Guide
+</a>
+</li>
+
+<li>
+<a href="concrete-driveway-cost.html">
+Concrete Driveway Cost Guide
+</a>
+</li>
+
+<li>
+<a href="concrete-slab-cost.html">
+Concrete Slab Cost Guide
+</a>
+</li>
+
+<li>
+<a href="concrete-walkway-cost.html">
+Concrete Walkway Cost Guide
+</a>
+</li>
+
+</ul>
 
 </div>
 
-</div>
-
-</section>
-
-
-<section class="section">
-
-<div class="info">
 
 <h2>
 How Much Does Concrete Cost?
@@ -633,8 +645,8 @@ location, site preparation and the type of finish selected.
 
 <p>
 A small concrete project may cost a few thousand dollars,
-while larger driveways, patios and slabs can cost significantly
-more depending on the project requirements.
+while larger driveways, patios and slabs can cost
+significantly more depending on the project requirements.
 </p>
 
 
@@ -764,8 +776,8 @@ Does location affect concrete prices?
 
 <p>
 Yes. Material, delivery and labor costs can vary by state and
-local market. This calculator allows users to select a state
-when creating an estimate.
+local market. This calculator allows users to select a
+location when creating an estimate.
 </p>
 
 
@@ -784,13 +796,15 @@ delivery and project specifications.
 <div class="notice">
 
 <strong>
-Planning Tip:
+Important:
 </strong>
 
 <p>
+Project Cost Hub provides general planning estimates only.
 Before starting a concrete project, compare several local
-contractor quotes and confirm the exact materials, preparation
-work and project specifications included in each quote.
+contractor quotes and confirm the exact materials,
+preparation work and project specifications included in
+each quote.
 </p>
 
 </div>
@@ -824,248 +838,177 @@ projects.
 
 function calculateCost() {
 
-const projectType =
-document.getElementById("projectType").value;
+    const projectType =
+        document.getElementById("projectType").value;
 
-const state =
-document.getElementById("state").value;
+    const location =
+        document.getElementById("location").value;
 
-const length =
-parseFloat(document.getElementById("length").value);
+    const length =
+        parseFloat(document.getElementById("length").value);
 
-const width =
-parseFloat(document.getElementById("width").value);
+    const width =
+        parseFloat(document.getElementById("width").value);
 
-const depth =
-parseFloat(document.getElementById("depth").value);
+    const depth =
+        parseFloat(document.getElementById("depth").value);
 
-const finish =
-document.getElementById("finish").value;
+    const finish =
+        document.getElementById("finish").value;
 
 
-if (
-isNaN(length) ||
-isNaN(width) ||
-isNaN(depth) ||
-length <= 0 ||
-width <= 0 ||
-depth <= 0
-) {
+    if (
+        !location ||
+        !length ||
+        !width ||
+        !depth ||
+        length <= 0 ||
+        width <= 0 ||
+        depth <= 0
+    ) {
 
-alert("Please enter valid measurements.");
+        alert("Please enter all project details.");
 
-return;
+        return;
 
-}
+    }
 
 
-const area =
-length * width;
+    const area = length * width;
 
+    const volume =
+        (area * (depth / 12)) / 27;
 
-const depthFeet =
-depth / 12;
 
+    let baseRateLow = 8;
 
-const cubicFeet =
-area * depthFeet;
+    let baseRateHigh = 16;
 
 
-const cubicYards =
-cubicFeet / 27;
+    if (projectType === "driveway") {
 
+        baseRateLow = 9;
+        baseRateHigh = 18;
 
-let laborLow;
-let laborHigh;
+    }
 
+    if (projectType === "slab") {
 
-if (projectType === "driveway") {
+        baseRateLow = 7;
+        baseRateHigh = 15;
 
-laborLow = 8;
-laborHigh = 20;
+    }
 
-}
+    if (projectType === "walkway") {
 
-else if (projectType === "patio") {
+        baseRateLow = 10;
+        baseRateHigh = 20;
 
-laborLow = 6;
-laborHigh = 18;
+    }
 
-}
 
-else if (projectType === "slab") {
+    if (location === "low") {
 
-laborLow = 5;
-laborHigh = 15;
+        baseRateLow *= 0.90;
+        baseRateHigh *= 0.90;
 
-}
+    }
 
-else {
+    if (location === "high") {
 
-laborLow = 7;
-laborHigh = 18;
+        baseRateLow *= 1.15;
+        baseRateHigh *= 1.15;
 
-}
+    }
 
 
-if (finish === "standard") {
+    if (finish === "standard") {
 
-laborLow *= 1.10;
-laborHigh *= 1.10;
+        baseRateLow *= 1.10;
+        baseRateHigh *= 1.10;
 
-}
+    }
 
+    if (finish === "decorative") {
 
-if (finish === "decorative") {
+        baseRateLow *= 1.30;
+        baseRateHigh *= 1.40;
 
-laborLow *= 1.40;
-laborHigh *= 1.80;
+    }
 
-}
 
+    const materialLow =
+        area * baseRateLow * 0.40;
 
-const materialPrices = {
+    const materialHigh =
+        area * baseRateHigh * 0.40;
 
-texas: {
-low: 110,
-high: 140
-},
 
-california: {
-low: 140,
-high: 180
-},
+    const installationLow =
+        area * baseRateLow * 0.60;
 
-florida: {
-low: 120,
-high: 150
-},
+    const installationHigh =
+        area * baseRateHigh * 0.60;
 
-"north-carolina": {
-low: 120,
-high: 140
-},
 
-"new-york": {
-low: 150,
-high: 180
-},
+    const totalLow =
+        materialLow + installationLow;
 
-georgia: {
-low: 120,
-high: 140
-},
+    const totalHigh =
+        materialHigh + installationHigh;
 
-arizona: {
-low: 130,
-high: 170
-},
 
-illinois: {
-low: 130,
-high: 160
-},
+    const locationNames = {
 
-ohio: {
-low: 110,
-high: 140
-},
+        low: "Lower Cost Market",
 
-indiana: {
-low: 120,
-high: 150
-}
+        average: "Average Cost Market",
 
-};
+        high: "Higher Cost Market"
 
+    };
 
-const selectedMaterial =
-materialPrices[state];
 
+    document.getElementById("totalCost").textContent =
+        "$" +
+        Math.round(totalLow).toLocaleString() +
+        " - $" +
+        Math.round(totalHigh).toLocaleString();
 
-const materialLow =
-cubicYards * selectedMaterial.low;
 
+    document.getElementById("costPerSqFt").textContent =
+        "$" +
+        baseRateLow.toFixed(2) +
+        " - $" +
+        baseRateHigh.toFixed(2);
 
-const materialHigh =
-cubicYards * selectedMaterial.high;
 
+    document.getElementById("locationResult").textContent =
+        locationNames[location];
 
-const laborLowTotal =
-area * laborLow;
 
+    document.getElementById("materialCost").textContent =
+        "$" +
+        Math.round(materialLow).toLocaleString() +
+        " - $" +
+        Math.round(materialHigh).toLocaleString();
 
-const laborHighTotal =
-area * laborHigh;
 
+    document.getElementById("installationCost").textContent =
+        "$" +
+        Math.round(installationLow).toLocaleString() +
+        " - $" +
+        Math.round(installationHigh).toLocaleString();
 
-const totalLow =
-materialLow + laborLowTotal;
 
+    document.getElementById("projectArea").textContent =
+        Math.round(area).toLocaleString() +
+        " sq ft";
 
-const totalHigh =
-materialHigh + laborHighTotal;
 
-
-/* New: estimated cost per square foot */
-
-const costPerSqFtLow =
-totalLow / area;
-
-const costPerSqFtHigh =
-totalHigh / area;
-
-
-const stateName =
-document.getElementById("state").options[
-document.getElementById("state").selectedIndex
-].text;
-
-
-document.getElementById("total").textContent =
-"$" +
-Math.round(totalLow).toLocaleString() +
-" - $" +
-Math.round(totalHigh).toLocaleString();
-
-
-document.getElementById("costPerSqFt").textContent =
-"$" +
-costPerSqFtLow.toFixed(2) +
-" - $" +
-costPerSqFtHigh.toFixed(2);
-
-
-document.getElementById("locationResult").textContent =
-stateName;
-
-
-document.getElementById("material").textContent =
-"$" +
-Math.round(materialLow).toLocaleString() +
-" - $" +
-Math.round(materialHigh).toLocaleString();
-
-
-document.getElementById("labor").textContent =
-"$" +
-Math.round(laborLowTotal).toLocaleString() +
-" - $" +
-Math.round(laborHighTotal).toLocaleString();
-
-
-document.getElementById("area").textContent =
-area.toFixed(0) +
-" sq ft";
-
-
-document.getElementById("volume").textContent =
-cubicYards.toFixed(2) +
-" cubic yards";
-
-
-document.getElementById("result").style.display =
-"block";
+    document.getElementById("concreteVolume").textContent =
+        volume.toFixed(2) +
+        " cubic yards";
 
 }
 
