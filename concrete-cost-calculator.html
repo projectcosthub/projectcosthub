@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Concrete Cost Calculator | Project Cost Hub</title>
+
+<meta name="description" content="Estimate the potential cost of a concrete patio, driveway or slab using our free concrete cost calculator.">
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f8fa;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+header {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 20px 30px;
+}
+
+.nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4b5563;
+    margin-left: 20px;
+}
+
+.hero {
+    max-width: 850px;
+    margin: 60px auto 40px;
+    padding: 0 25px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 44px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 19px;
+    color: #6b7280;
+}
+
+.section {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 25px;
+}
+
+.calculator {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.calculator h2 {
+    margin-bottom: 10px;
+}
+
+.intro {
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.result {
+    display: none;
+    margin-top: 25px;
+    background: #eff6ff;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.result h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.total {
+    text-align: center;
+    font-size: 34px;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 20px;
+}
+
+.breakdown {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.info {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.info h2 {
+    margin-bottom: 20px;
+}
+
+.info h3 {
+    margin-top: 25px;
+    margin-bottom: 8px;
+}
+
+.info p {
+    color: #4b5563;
+    margin-bottom: 15px;
+}
+
+.notice {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    padding: 18px;
+    border-radius: 8px;
+    margin-top: 25px;
+}
+
+footer {
+    margin-top: 80px;
+    background: #111827;
+    color: #d1d5db;
+    text-align: center;
+    padding: 40px 25px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    nav {
+        display: none;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+Project<span>Cost</span>Hub
+</div>
+
+<nav>
+
+<a href="index.html">
+Concrete Calculator
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>
+Concrete Cost Calculator
+</h1>
+
+<p>
+Estimate the potential cost of a concrete project
+based on its size and project type.
+</p>
+
+</section>
+
+
+<section class="section">
+
+<div class="calculator">
+
+<h2>
+Estimate Your Concrete Project Cost
+</h2>
+
+<p class="intro">
+Enter your project details below to receive an
+estimated cost range.
+</p>
+
+
+<div class="form-group">
+
+<label for="projectType">
+Project Type
+</label>
+
+<select id="projectType">
+
+<option value="patio">
+Concrete Patio
+</option>
+
+<option value="driveway">
+Concrete Driveway
+</option>
+
+<option value="slab">
+Concrete Slab
+</option>
+
+<option value="walkway">
+Concrete Walkway
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="length">
+Length (feet)
+</label>
+
+<input
+type="number"
+id="length"
+placeholder="Example: 20"
+min="0"
+step="any"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="width">
+Width (feet)
+</label>
+
+<input
+type="number"
+id="width"
+placeholder="Example: 10"
+min="0"
+step="any"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="depth">
+Depth (inches)
+</label>
+
+<input
+type="number"
+id="depth"
+value="4"
+min="1"
+step="any"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="finish">
+Finish Level
+</label>
+
+<select id="finish">
+
+<option value="basic">
+Basic
+</option>
+
+<option value="standard" selected>
+Standard
+</option>
+
+<option value="decorative">
+Decorative
+</option>
+
+</select>
+
+</div>
+
+
+<button onclick="calculateCost()">
+
+Calculate Estimated Cost
+
+</button>
+
+
+<div class="result" id="result">
+
+<h3>
+Estimated Project Cost
+</h3>
+
+<div class="total" id="total">
+$0 - $0
+</div>
+
+
+<div class="breakdown">
+
+<strong>
+Estimated concrete material:
+</strong>
+
+<span id="material">
+$0 - $0
+</span>
+
+</div>
+
+
+<div class="breakdown">
+
+<strong>
+Estimated installation:
+</strong>
+
+<span id="labor">
+$0 - $0
+</span>
+
+</div>
+
+
+<div class="breakdown">
+
+<strong>
+Project area:
+</strong>
+
+<span id="area">
+0 sq ft
+</span>
+
+</div>
+
+
+<div class="breakdown">
+
+<strong>
+Concrete volume:
+</strong>
+
+<span id="volume">
+0 cubic yards
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="info">
+
+<h2>
+How Our Concrete Cost Calculator Works
+</h2>
+
+<p>
+This tool provides an estimated project cost based on
+the project size, project type and selected finish level.
+</p>
+
+
+<h3>
+Project size
+</h3>
+
+<p>
+The calculator uses your length and width to determine
+the approximate square footage of the project.
+</p>
+
+
+<h3>
+Concrete volume
+</h3>
+
+<p>
+The depth is used to estimate the volume of concrete
+required in cubic yards.
+</p>
+
+
+<h3>
+Material and installation
+</h3>
+
+<p>
+The estimate separates potential concrete material costs
+from installation costs to provide a more useful overview
+of the project.
+</p>
+
+
+<div class="notice">
+
+<strong>
+Important:
+</strong>
+
+<p>
+This calculator provides a general estimate only.
+Actual prices can vary significantly depending on
+location, contractor, material prices, site preparation,
+accessibility, project specifications and other factors.
+Always obtain local quotes before making a purchasing
+decision.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>
+<strong>Project Cost Hub</strong>
+</p>
+
+<p>
+Free calculators and guides for planning home improvement projects.
+</p>
+
+<p>
+© 2026 Project Cost Hub
+</p>
+
+</footer>
+
+
+<script>
+
+function calculateCost() {
+
+const projectType =
+document.getElementById("projectType").value;
+
+const length =
+parseFloat(document.getElementById("length").value);
+
+const width =
+parseFloat(document.getElementById("width").value);
+
+const depth =
+parseFloat(document.getElementById("depth").value);
+
+const finish =
+document.getElementById("finish").value;
+
+
+if (
+isNaN(length) ||
+isNaN(width) ||
+isNaN(depth) ||
+length <= 0 ||
+width <= 0 ||
+depth <= 0
+) {
+
+alert("Please enter valid measurements.");
+
+return;
+
+}
+
+
+const area =
+length * width;
+
+
+const depthFeet =
+depth / 12;
+
+
+const cubicFeet =
+area * depthFeet;
+
+
+const cubicYards =
+cubicFeet / 27;
+
+
+/*
+Base installation ranges per square foot.
+These are starting estimates for this prototype,
+not guaranteed market prices.
+*/
+
+let laborLow;
+let laborHigh;
+
+
+if (projectType === "driveway") {
+
+laborLow = 8;
+laborHigh = 20;
+
+}
+
+else if (projectType === "patio") {
+
+laborLow = 6;
+laborHigh = 18;
+
+}
+
+else if (projectType === "slab") {
+
+laborLow = 5;
+laborHigh = 15;
+
+}
+
+else {
+
+laborLow = 7;
+laborHigh = 18;
+
+}
+
+
+/*
+Finish adjustment.
+*/
+
+if (finish === "standard") {
+
+laborLow *= 1.10;
+laborHigh *= 1.10;
+
+}
+
+if (finish === "decorative") {
+
+laborLow *= 1.40;
+laborHigh *= 1.80;
+
+}
+
+
+/*
+Temporary material range.
+This will be replaced with a researched
+location-based model later.
+*/
+
+const materialLow =
+cubicYards * 120;
+
+const materialHigh =
+cubicYards * 210;
+
+
+const laborLowTotal =
+area * laborLow;
+
+const laborHighTotal =
+area * laborHigh;
+
+
+const totalLow =
+materialLow + laborLowTotal;
+
+const totalHigh =
+materialHigh + laborHighTotal;
+
+
+document.getElementById("total").textContent =
+"$" +
+Math.round(totalLow).toLocaleString() +
+" - $" +
+Math.round(totalHigh).toLocaleString();
+
+
+document.getElementById("material").textContent =
+"$" +
+Math.round(materialLow).toLocaleString() +
+" - $" +
+Math.round(materialHigh).toLocaleString();
+
+
+document.getElementById("labor").textContent =
+"$" +
+Math.round(laborLowTotal).toLocaleString() +
+" - $" +
+Math.round(laborHighTotal).toLocaleString();
+
+
+document.getElementById("area").textContent =
+area.toFixed(0) +
+" sq ft";
+
+
+document.getElementById("volume").textContent =
+cubicYards.toFixed(2) +
+" cubic yards";
+
+
+document.getElementById("result").style.display =
+"block";
+
+}
+
+</script>
+
+
+</body>
+</html>
