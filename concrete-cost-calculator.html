@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Concrete Cost Calculator | Project Cost Hub</title>
@@ -51,6 +50,7 @@ header {
 nav a {
     color: #374151;
     text-decoration: none;
+    margin-left: 14px;
 }
 
 .hero {
@@ -204,6 +204,11 @@ footer p {
 
 @media (max-width: 700px) {
 
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
     .hero h1 {
         font-size: 34px;
     }
@@ -239,8 +244,6 @@ Project<span>Cost</span>Hub
 <a href="index.html">
 Home
 </a>
-
-&nbsp; | &nbsp;
 
 <a href="concrete-cost-calculator.html">
 Concrete Calculator
@@ -452,6 +455,19 @@ Estimated Project Cost
 
 <div class="total" id="total">
 $0 - $0
+</div>
+
+
+<div class="breakdown">
+
+<strong>
+Estimated cost per sq ft:
+</strong>
+
+<span id="costPerSqFt">
+$0 - $0
+</span>
+
 </div>
 
 
@@ -787,7 +803,9 @@ work and project specifications included in each quote.
 <footer>
 
 <p>
-<strong>Project Cost Hub</strong>
+<strong>
+Project Cost Hub
+</strong>
 </p>
 
 <p>
@@ -989,6 +1007,15 @@ const totalHigh =
 materialHigh + laborHighTotal;
 
 
+/* New: estimated cost per square foot */
+
+const costPerSqFtLow =
+totalLow / area;
+
+const costPerSqFtHigh =
+totalHigh / area;
+
+
 const stateName =
 document.getElementById("state").options[
 document.getElementById("state").selectedIndex
@@ -1000,6 +1027,13 @@ document.getElementById("total").textContent =
 Math.round(totalLow).toLocaleString() +
 " - $" +
 Math.round(totalHigh).toLocaleString();
+
+
+document.getElementById("costPerSqFt").textContent =
+"$" +
+costPerSqFtLow.toFixed(2) +
+" - $" +
+costPerSqFtHigh.toFixed(2);
 
 
 document.getElementById("locationResult").textContent =
