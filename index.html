@@ -1,445 +1,583 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Project Cost Hub | Free Home Improvement Calculators</title>
+<meta charset="UTF-8">
 
-    <meta name="description" content="Free home improvement calculators and cost guides to help you plan your next project.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<title>Concrete Calculator | Project Cost Hub</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f7f8fa;
-            color: #1f2937;
-            line-height: 1.6;
-        }
+<meta name="description" content="Use our free concrete calculator to estimate cubic yards and concrete bags needed for your slab, patio, driveway or other project.">
 
-        header {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 20px 30px;
-        }
+<style>
 
-        .nav {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #111827;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f8fa;
+    color: #1f2937;
+    line-height: 1.6;
+}
 
-        .logo span {
-            color: #2563eb;
-        }
+header {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 20px 30px;
+}
 
-        nav a {
-            text-decoration: none;
-            color: #4b5563;
-            margin-left: 25px;
-        }
+.nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .hero {
-            max-width: 900px;
-            margin: 70px auto 50px;
-            padding: 0 25px;
-            text-align: center;
-        }
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #111827;
+}
 
-        .hero h1 {
-            font-size: 48px;
-            line-height: 1.15;
-            margin-bottom: 20px;
-            color: #111827;
-        }
+.logo span {
+    color: #2563eb;
+}
 
-        .hero p {
-            font-size: 20px;
-            color: #6b7280;
-        }
+nav a {
+    text-decoration: none;
+    color: #4b5563;
+    margin-left: 25px;
+}
 
-        .section {
-            max-width: 1100px;
-            margin: 60px auto;
-            padding: 0 25px;
-        }
+.hero {
+    max-width: 900px;
+    margin: 60px auto 40px;
+    padding: 0 25px;
+    text-align: center;
+}
 
-        .section h2 {
-            font-size: 30px;
-            margin-bottom: 25px;
-            color: #111827;
-        }
+.hero h1 {
+    font-size: 46px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: #111827;
+}
 
-        .calculator {
-            max-width: 700px;
-            margin: 30px auto;
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 14px;
-            padding: 30px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-        }
+.hero p {
+    font-size: 19px;
+    color: #6b7280;
+}
 
-        .calculator h2 {
-            margin-bottom: 10px;
-        }
+.section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 25px;
+}
 
-        .calculator-intro {
-            color: #6b7280;
-            margin-bottom: 25px;
-        }
+.calculator {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+.calculator h2 {
+    margin-bottom: 10px;
+}
 
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
+.calculator-intro {
+    color: #6b7280;
+    margin-bottom: 25px;
+}
 
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 13px;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-            font-size: 16px;
-        }
+.form-group {
+    margin-bottom: 20px;
+}
 
-        .calculate-button {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            background: #2563eb;
-            color: white;
-            font-size: 17px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
 
-        .calculate-button:hover {
-            background: #1d4ed8;
-        }
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+}
 
-        .result {
-            display: none;
-            margin-top: 25px;
-            padding: 20px;
-            background: #eff6ff;
-            border-radius: 10px;
-            text-align: center;
-        }
+.calculate-button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        .result h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
+.calculate-button:hover {
+    background: #1d4ed8;
+}
 
-        .result-number {
-            font-size: 32px;
-            font-weight: bold;
-            color: #2563eb;
-            margin-bottom: 8px;
-        }
+.result {
+    display: none;
+    margin-top: 25px;
+    padding: 25px;
+    background: #eff6ff;
+    border-radius: 10px;
+}
 
-        .result p {
-            color: #4b5563;
-        }
+.result h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+.result-main {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 20px;
+}
 
-        .card {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 25px;
-        }
+.result-item {
+    background: white;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
 
-        .card h3 {
-            margin-bottom: 10px;
-            color: #111827;
-        }
+.result-item strong {
+    display: block;
+}
 
-        .card p {
-            color: #6b7280;
-        }
+.info-box {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 30px;
+}
 
-        .guide {
-            max-width: 800px;
-            margin: auto;
-        }
+.info-box h2 {
+    margin-bottom: 20px;
+}
 
-        .guide p {
-            margin-bottom: 18px;
-            color: #4b5563;
-        }
+.info-box h3 {
+    margin-top: 25px;
+    margin-bottom: 8px;
+}
 
-        .guide h3 {
-            margin: 25px 0 10px;
-            color: #111827;
-        }
+.info-box p {
+    color: #4b5563;
+    margin-bottom: 15px;
+}
 
-        footer {
-            margin-top: 80px;
-            background: #111827;
-            color: #d1d5db;
-            padding: 40px 25px;
-            text-align: center;
-        }
+.example {
+    background: #f3f4f6;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
 
-        footer p {
-            margin-bottom: 10px;
-        }
+.faq {
+    margin-top: 20px;
+}
 
-        @media (max-width: 800px) {
-            .cards {
-                grid-template-columns: 1fr;
-            }
+.faq h3 {
+    margin-bottom: 8px;
+}
 
-            .hero h1 {
-                font-size: 36px;
-            }
+.faq p {
+    color: #4b5563;
+    margin-bottom: 25px;
+}
 
-            nav {
-                display: none;
-            }
-        }
-    </style>
+footer {
+    margin-top: 80px;
+    background: #111827;
+    color: #d1d5db;
+    padding: 40px 25px;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    nav {
+        display: none;
+    }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-<header>
-    <div class="nav">
-        <div class="logo">
-            Project<span>Cost</span>Hub
-        </div>
 
-        <nav>
-            <a href="#calculator">Calculator</a>
-            <a href="#guides">Guides</a>
-        </nav>
-    </div>
+<header>
+
+<div class="nav">
+
+<div class="logo">
+Project<span>Cost</span>Hub
+</div>
+
+<nav>
+
+<a href="#calculator">
+Calculator
+</a>
+
+<a href="#guide">
+Guide
+</a>
+
+<a href="#faq">
+FAQ
+</a>
+
+</nav>
+
+</div>
+
 </header>
 
 
 <section class="hero">
 
-    <h1>Plan Your Next Home Project With Confidence</h1>
+<h1>
+Concrete Calculator
+</h1>
 
-    <p>
-        Free calculators and practical cost guides
-        to help you plan your next home improvement project.
-    </p>
+<p>
+Calculate how much concrete you need for your slab,
+patio, driveway or other project.
+</p>
 
 </section>
 
 
 <section class="section" id="calculator">
 
-    <div class="calculator">
+<div class="calculator">
 
-        <h2>Concrete Calculator</h2>
+<h2>
+Concrete Volume Calculator
+</h2>
 
-        <p class="calculator-intro">
-            Calculate how much concrete you need for your project.
-        </p>
-
-
-        <div class="form-group">
-
-            <label for="length">
-                Length (feet)
-            </label>
-
-            <input
-                type="number"
-                id="length"
-                placeholder="Example: 20"
-                min="0"
-                step="any"
-            >
-
-        </div>
+<p class="calculator-intro">
+Enter your project dimensions to estimate the amount
+of concrete you need.
+</p>
 
 
-        <div class="form-group">
+<div class="form-group">
 
-            <label for="width">
-                Width (feet)
-            </label>
+<label for="length">
+Length (feet)
+</label>
 
-            <input
-                type="number"
-                id="width"
-                placeholder="Example: 10"
-                min="0"
-                step="any"
-            >
+<input
+type="number"
+id="length"
+placeholder="Example: 20"
+min="0"
+step="any"
+>
 
-        </div>
-
-
-        <div class="form-group">
-
-            <label for="depth">
-                Depth (inches)
-            </label>
-
-            <input
-                type="number"
-                id="depth"
-                placeholder="Example: 4"
-                min="0"
-                step="any"
-            >
-
-        </div>
+</div>
 
 
-        <button
-            class="calculate-button"
-            onclick="calculateConcrete()"
-        >
-            Calculate Concrete
-        </button>
+<div class="form-group">
+
+<label for="width">
+Width (feet)
+</label>
+
+<input
+type="number"
+id="width"
+placeholder="Example: 10"
+min="0"
+step="any"
+>
+
+</div>
 
 
-        <div class="result" id="result">
+<div class="form-group">
 
-            <h3>Concrete Needed</h3>
+<label for="depth">
+Depth (inches)
+</label>
 
-            <div class="result-number" id="resultNumber">
-                0
-            </div>
+<input
+type="number"
+id="depth"
+placeholder="Example: 4"
+min="0"
+step="any"
+>
 
-            <p id="wasteResult">
-                Recommended amount including 10% waste.
-            </p>
+</div>
 
-        </div>
 
-    </div>
+<div class="form-group">
+
+<label for="waste">
+Waste allowance
+</label>
+
+<select id="waste">
+
+<option value="0">
+0%
+</option>
+
+<option value="0.10" selected>
+10%
+</option>
+
+<option value="0.15">
+15%
+</option>
+
+</select>
+
+</div>
+
+
+<button
+class="calculate-button"
+onclick="calculateConcrete()"
+>
+
+Calculate Concrete
+
+</button>
+
+
+<div class="result" id="result">
+
+<h3>
+Estimated Concrete Needed
+</h3>
+
+
+<div
+class="result-main"
+id="resultYards"
+>
+0
+</div>
+
+
+<div class="result-item">
+
+<strong>
+Recommended amount
+</strong>
+
+<span id="recommended">
+0
+</span>
+
+</div>
+
+
+<div class="result-item">
+
+<strong>
+Approximate 60 lb bags
+</strong>
+
+<span id="bags60">
+0
+</span>
+
+</div>
+
+
+<div class="result-item">
+
+<strong>
+Approximate 80 lb bags
+</strong>
+
+<span id="bags80">
+0
+</span>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<section class="section">
+<section class="section" id="guide">
 
-    <div class="guide">
+<div class="info-box">
 
-        <h2>How Does the Concrete Calculator Work?</h2>
+<h2>
+How Much Concrete Do I Need?
+</h2>
 
-        <p>
-            Our concrete calculator estimates the amount of concrete
-            needed based on the length, width and depth of your project.
-        </p>
+<p>
+Our concrete calculator estimates the volume of concrete
+needed based on the length, width and depth of your project.
+</p>
 
-        <h3>Step 1: Measure your project</h3>
 
-        <p>
-            Measure the length and width in feet and the depth
-            in inches.
-        </p>
+<h3>
+1. Measure the project
+</h3>
 
-        <h3>Step 2: Calculate the volume</h3>
+<p>
+Measure the length and width in feet.
+Measure the depth in inches.
+</p>
 
-        <p>
-            The calculator converts your measurements into cubic yards,
-            which is the common unit used when ordering ready-mix concrete.
-        </p>
 
-        <h3>Step 3: Add a waste allowance</h3>
+<h3>
+2. Calculate cubic feet
+</h3>
 
-        <p>
-            We add 10% to the calculated amount to provide a small
-            allowance for waste and measurement differences.
-        </p>
+<p>
+The depth is converted from inches to feet.
+The length, width and depth are then multiplied
+to determine the volume in cubic feet.
+</p>
 
-    </div>
+
+<h3>
+3. Convert to cubic yards
+</h3>
+
+<p>
+Ready-mix concrete is commonly ordered by the cubic yard.
+One cubic yard equals 27 cubic feet.
+</p>
+
+
+<h3>
+4. Add a waste allowance
+</h3>
+
+<p>
+A small additional amount can help account for
+measurement differences, spillage and uneven surfaces.
+</p>
+
+
+<div class="example">
+
+<strong>
+Example:
+</strong>
+
+<p>
+A 20 ft × 10 ft area with a depth of 4 inches
+requires approximately 2.47 cubic yards of concrete
+before adding a waste allowance.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
 
-<section class="section" id="guides">
+<section class="section" id="faq">
 
-    <h2>More Home Improvement Tools</h2>
+<div class="info-box">
 
-    <div class="cards">
-
-        <div class="card">
-
-            <h3>🏠 Roofing Calculator</h3>
-
-            <p>
-                Estimate roofing material requirements
-                for your next project.
-            </p>
-
-        </div>
+<h2>
+Concrete Calculator FAQ
+</h2>
 
 
-        <div class="card">
+<div class="faq">
 
-            <h3>🎨 Paint Calculator</h3>
+<h3>
+How much concrete do I need for a 10×10 slab?
+</h3>
 
-            <p>
-                Estimate how much paint you may need
-                for your project.
-            </p>
+<p>
+The amount depends on the thickness of the slab.
+For example, a 10×10 foot slab that is 4 inches thick
+requires approximately 1.23 cubic yards before waste.
+</p>
 
-        </div>
+
+<h3>
+How much extra concrete should I order?
+</h3>
+
+<p>
+Many projects include an additional allowance for waste
+and measurement differences. The appropriate amount can
+depend on the shape and conditions of the project.
+</p>
 
 
-        <div class="card">
+<h3>
+Should I order concrete by cubic yards?
+</h3>
 
-            <h3>🧱 Concrete Cost Calculator</h3>
+<p>
+Ready-mix concrete is commonly sold by the cubic yard.
+For larger projects, confirm the final quantity with
+your concrete supplier or contractor.
+</p>
 
-            <p>
-                Estimate the potential cost of a concrete
-                project.
-            </p>
+</div>
 
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
 <footer>
 
-    <p>
-        <strong>Project Cost Hub</strong>
-    </p>
+<p>
+<strong>Project Cost Hub</strong>
+</p>
 
-    <p>
-        Free tools and guides for planning home improvement projects.
-    </p>
+<p>
+Free calculators and guides for planning home improvement projects.
+</p>
 
-    <p>
-        © 2026 Project Cost Hub
-    </p>
+<p>
+© 2026 Project Cost Hub
+</p>
 
 </footer>
 
@@ -448,84 +586,91 @@
 
 function calculateConcrete() {
 
-    const length = parseFloat(
-        document.getElementById("length").value
-    );
+const length =
+parseFloat(document.getElementById("length").value);
 
-    const width = parseFloat(
-        document.getElementById("width").value
-    );
+const width =
+parseFloat(document.getElementById("width").value);
 
-    const depth = parseFloat(
-        document.getElementById("depth").value
-    );
+const depth =
+parseFloat(document.getElementById("depth").value);
 
-
-    if (
-        isNaN(length) ||
-        isNaN(width) ||
-        isNaN(depth) ||
-        length <= 0 ||
-        width <= 0 ||
-        depth <= 0
-    ) {
-
-        alert("Please enter valid measurements.");
-
-        return;
-    }
+const waste =
+parseFloat(document.getElementById("waste").value);
 
 
-    /*
-        Convert depth from inches to feet.
-    */
+if (
+isNaN(length) ||
+isNaN(width) ||
+isNaN(depth) ||
+length <= 0 ||
+width <= 0 ||
+depth <= 0
+) {
 
-    const depthInFeet = depth / 12;
+alert("Please enter valid measurements.");
 
+return;
 
-    /*
-        Calculate cubic feet.
-    */
-
-    const cubicFeet =
-        length *
-        width *
-        depthInFeet;
-
-
-    /*
-        Convert cubic feet to cubic yards.
-
-        1 cubic yard = 27 cubic feet.
-    */
-
-    const cubicYards =
-        cubicFeet / 27;
+}
 
 
-    /*
-        Add 10% waste.
-    */
-
-    const recommendedAmount =
-        cubicYards * 1.10;
+const depthInFeet =
+depth / 12;
 
 
-    document.getElementById("resultNumber").textContent =
-        cubicYards.toFixed(2) + " cubic yards";
+const cubicFeet =
+length *
+width *
+depthInFeet;
 
 
-    document.getElementById("wasteResult").textContent =
-        "Recommended amount with 10% waste: " +
-        recommendedAmount.toFixed(2) +
-        " cubic yards.";
+const cubicYards =
+cubicFeet / 27;
 
 
-    document.getElementById("result").style.display =
-        "block";
+const recommended =
+cubicYards *
+(1 + waste);
+
+
+/*
+Approximate bag coverage.
+
+These are rough estimates and actual coverage
+varies by product and manufacturer.
+*/
+
+const bags60 =
+Math.ceil(recommended * 45);
+
+const bags80 =
+Math.ceil(recommended * 40);
+
+
+document.getElementById("resultYards").textContent =
+cubicYards.toFixed(2) + " cubic yards";
+
+
+document.getElementById("recommended").textContent =
+recommended.toFixed(2) + " cubic yards";
+
+
+document.getElementById("bags60").textContent =
+bags60 + " bags";
+
+
+document.getElementById("bags80").textContent =
+bags80 + " bags";
+
+
+document.getElementById("result").style.display =
+"block";
+
 }
 
 </script>
+
 
 </body>
 </html>
